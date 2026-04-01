@@ -4,39 +4,19 @@ public class PracticeProblems {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] numbers = new int[5];
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
 
-        // Input
-        System.out.println("Enter 5 numbers:");
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = sc.nextInt();
+        int[] table = new int[10];
+
+        // Store multiplication results
+        for (int i = 1; i <= 10; i++) {
+            table[i - 1] = number * i;
         }
 
-        // Checking each number
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > 0) {
-                if (numbers[i] % 2 == 0) {
-                    System.out.println(numbers[i] + " is positive and even.");
-                } else {
-                    System.out.println(numbers[i] + " is positive and odd.");
-                }
-            } else if (numbers[i] < 0) {
-                System.out.println(numbers[i] + " is negative.");
-            } else {
-                System.out.println(numbers[i] + " is zero.");
-            }
-        }
-
-        // Compare first and last element
-        int first = numbers[0];
-        int last = numbers[numbers.length - 1];
-
-        if (first == last) {
-            System.out.println("First and last elements are equal.");
-        } else if (first > last) {
-            System.out.println("First element is greater than last.");
-        } else {
-            System.out.println("First element is less than last.");
+        // Display table
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " * " + i + " = " + table[i - 1]);
         }
 
         sc.close();
