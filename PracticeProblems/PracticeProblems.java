@@ -2,23 +2,30 @@ import java.util.Scanner;
 
 public class PracticeProblems {
 
-    // Method to calculate number of handshakes
-    public static int calculateHandshakes(int n) {
-        return (n * (n - 1)) / 2;
+    public static int checkNumber(int num) {
+        if (num > 0) {
+            return 1;
+        } else if (num < 0) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
 
-        // User input
-        System.out.print("Enter number of students: ");
-        int numberOfStudents = sc.nextInt();
+        int result = checkNumber(num);
 
-        // Calculate handshakes
-        int result = calculateHandshakes(numberOfStudents);
-
-        // Output
-        System.out.println("The maximum number of handshakes is: " + result);
+        if (result == 1) {
+            System.out.println("Positive Number");
+        } else if (result == -1) {
+            System.out.println("Negative Number");
+        } else {
+            System.out.println("Zero");
+        }
 
         sc.close();
     }
