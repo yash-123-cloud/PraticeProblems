@@ -2,32 +2,23 @@ import java.util.Scanner;
 
 public class PracticeProblems {
 
-    // Method to calculate Simple Interest
-    public static double calculateSI(double principal, double rate, double time) {
-        return (principal * rate * time) / 100;
+    // Method to calculate number of handshakes
+    public static int calculateHandshakes(int n) {
+        return (n * (n - 1)) / 2;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         // User input
-        System.out.print("Enter Principal: ");
-        double principal = sc.nextDouble();
+        System.out.print("Enter number of students: ");
+        int numberOfStudents = sc.nextInt();
 
-        System.out.print("Enter Rate: ");
-        double rate = sc.nextDouble();
-
-        System.out.print("Enter Time: ");
-        double time = sc.nextDouble();
-
-        // Calculate SI
-        double si = calculateSI(principal, rate, time);
+        // Calculate handshakes
+        int result = calculateHandshakes(numberOfStudents);
 
         // Output
-        System.out.println("The Simple Interest is " + si +
-                " for Principal " + principal +
-                ", Rate of Interest " + rate +
-                " and Time " + time);
+        System.out.println("The maximum number of handshakes is: " + result);
 
         sc.close();
     }
