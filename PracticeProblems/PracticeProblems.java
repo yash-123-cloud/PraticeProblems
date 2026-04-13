@@ -1,44 +1,33 @@
 import java.util.Scanner;
 
 public class PracticeProblems {
+
+    // Method to calculate Simple Interest
+    public static double calculateSI(double principal, double rate, double time) {
+        return (principal * rate * time) / 100;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String[] names = {"Amar", "Akbar", "Anthony"};
-        int[] age = new int[3];
-        double[] height = new double[3];
+        // User input
+        System.out.print("Enter Principal: ");
+        double principal = sc.nextDouble();
 
-        // Input
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Enter details for " + names[i]);
+        System.out.print("Enter Rate: ");
+        double rate = sc.nextDouble();
 
-            System.out.print("Enter Age: ");
-            age[i] = sc.nextInt();
+        System.out.print("Enter Time: ");
+        double time = sc.nextDouble();
 
-            System.out.print("Enter Height: ");
-            height[i] = sc.nextDouble();
-        }
-
-        // Find youngest
-        int youngestIndex = 0;
-        for (int i = 1; i < 3; i++) {
-            if (age[i] < age[youngestIndex]) {
-                youngestIndex = i;
-            }
-        }
-
-        // Find tallest
-        int tallestIndex = 0;
-        for (int i = 1; i < 3; i++) {
-            if (height[i] > height[tallestIndex]) {
-                tallestIndex = i;
-            }
-        }
+        // Calculate SI
+        double si = calculateSI(principal, rate, time);
 
         // Output
-        System.out.println("\n--- Results ---");
-        System.out.println("Youngest Friend: " + names[youngestIndex] + " (Age: " + age[youngestIndex] + ")");
-        System.out.println("Tallest Friend: " + names[tallestIndex] + " (Height: " + height[tallestIndex] + ")");
+        System.out.println("The Simple Interest is " + si +
+                " for Principal " + principal +
+                ", Rate of Interest " + rate +
+                " and Time " + time);
 
         sc.close();
     }
